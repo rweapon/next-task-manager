@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/next-task-manager/",
+  basePath: "/next-task-manager",
   output: 'export',
   eslint: {
     ignoreDuringBuilds: true,

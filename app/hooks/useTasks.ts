@@ -5,9 +5,11 @@ import { NewTask, Task } from '../types';
 
 export const useTasks = () => {
   const [tasks, setTasks] = useState<Task[]>(() => {
-    const data = localStorage.getItem("tasks");
-    if (data) {
-      return JSON.parse(data);
+    if (typeof window !== "undefined") {
+      const data = localStorage.getItem("tasks");
+      if (data) {
+        return JSON.parse(data);
+      }
     }
     return []
   })
