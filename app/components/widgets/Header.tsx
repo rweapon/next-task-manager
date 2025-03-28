@@ -6,11 +6,11 @@ import { memo } from "react";
 
 export const Header = memo(function Header() {
   return (
-    <header className="mb-8">
+    <header className="mb-8 ">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <ListTodo className="size-8" />
-          <h1 className="text-3xl font-bold">Менеджер задач</h1>
+          <h1 className="text-xl sm:text-3xl font-bold">Менеджер задач</h1>
         </div>
         <ThemeToggle />
       </div>

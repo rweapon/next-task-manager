@@ -1,13 +1,15 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState, useCallback } from "react";
 import { Task, Filter, Notifications, TaskFormValues } from "./types";
 import { useTasks } from "./hooks/useTasks";
 import { TaskForm } from "./components/TaskForm";
 import { Modal } from "./components/widgets/Modal";
-import { TaskList } from "./components/widgets/TaskList";
 import { Notification } from "./components/Notification";
 import { PageActions } from "@/app/components/widgets/PageActions";
+import Loading from "@/app/loading";
+const TaskList = dynamic(() => import("./components/widgets/TaskList"), { ssr: false, loading: () => <Loading /> });
 
 export default function Home() {
   const { tasks, addTask, deleteTask, toggleTask, updateTask } = useTasks();
@@ -54,12 +56,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="space-y-8">
-      <PageActions
-        filter={filter}
-        onFilterChange={handleFilterChange}
-        onOpenModal={() => setIsAddModalOpen(true)}
-      />
+    <main>
+      <PageActions filter={filter} onFilterChange={handleFilterChange} onOpenModal={() => setIsAddModalOpen(true)} />
 
       <TaskList tasks={tasks} filter={filter} onToggle={toggleTask} onDelete={handleDelete} onEdit={setEditingTask} />
 

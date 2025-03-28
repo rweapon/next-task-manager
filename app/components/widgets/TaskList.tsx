@@ -12,7 +12,7 @@ type Props = {
   onEdit: (task: Task) => void;
 };
 
-export const TaskList = memo(function TaskList({ tasks, filter, onToggle, onDelete, onEdit }: Props) {
+const TaskList = memo(function TaskList({ tasks, filter, onToggle, onDelete, onEdit }: Props) {
   const filteredTasks = tasks.filter((task) => {
     switch (filter) {
       case Filter.active:
@@ -35,3 +35,5 @@ export const TaskList = memo(function TaskList({ tasks, filter, onToggle, onDele
     </section>
   );
 });
+
+export default TaskList;

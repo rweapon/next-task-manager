@@ -25,7 +25,7 @@ export function TaskForm({ onSubmit, initialValues }: Props) {
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 *:space-y-2">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-2 sm:space-y-4 *:space-y-2">
       <div>
         <label htmlFor={FormValue.title} className="form__input-label">
           {FormInputs[FormValue.title].label}

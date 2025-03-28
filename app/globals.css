@@ -101,7 +101,7 @@
   }
 
   .form__input {
-    @apply w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-800;
+    @apply w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-800 cursor-pointer;
   }
 
   .form__input-label {

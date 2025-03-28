@@ -36,7 +36,7 @@ export const Modal = memo(function Modal({ isOpen, onCloseModal, title, children
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" onClick={onCloseModal}>
-      <div className="w-full max-w-md rounded-lg bg-white p-6 dark:bg-gray-800" onClick={(e) => e.stopPropagation()}>
+      <div className="w-full max-w-[90%] sm:max-w-md rounded-lg bg-white p-6 dark:bg-gray-800" onClick={(e) => e.stopPropagation()}>
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-xl font-semibold">{title}</h2>
           <button
