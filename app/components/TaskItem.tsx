@@ -17,18 +17,18 @@ export const TaskItem = memo(function TaskItem({ task, onToggle, onDelete, onEdi
   const { completed, createdAt, id, title, priority, description } = task;
 
   return (
-    <article className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-      <div className="flex items-start gap-4">
+    <article className="relative rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+      <div className="contents sm:flex items-start gap-4">
         <input
           type="checkbox"
           checked={completed}
           onChange={() => onToggle(id)}
-          className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dark:border-gray-600 dark:ring-offset-gray-800 cursor-pointer"
+          className="absolute  sm:relative mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dark:border-gray-600 dark:ring-offset-gray-800 cursor-pointer"
         />
         <div className="flex-1">
-          <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-3">
+          <div className="flex flex-col-reverse sm:flex-row items-start justify-between gap-3">
             <h3 className={`self-start text-lg font-semibold break-all  ${completed ? "line-through text-gray-500" : ""}`}>{title}</h3>
-            <div className="flex items-center gap-2 self-end flex-wrap">
+            <div className="h-full flex items-center justify-end gap-2 self-end sm:self-start flex-wrap sm:flex-nowrap">
               <span className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-800 dark:bg-gray-700 dark:text-gray-200 text-nowrap">
                 {format(new Date(createdAt), "MMM d, yyyy")}
               </span>
