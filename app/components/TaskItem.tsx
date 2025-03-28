@@ -27,7 +27,7 @@ export const TaskItem = memo(function TaskItem({ task, onToggle, onDelete, onEdi
         />
         <div className="flex-1">
           <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-3">
-            <h3 className={`self-start text-lg font-semibold ${completed ? "line-through text-gray-500" : ""}`}>{title}</h3>
+            <h3 className={`self-start text-lg font-semibold break-all  ${completed ? "line-through text-gray-500" : ""}`}>{title}</h3>
             <div className="flex items-center gap-2 self-end flex-wrap">
               <span className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-800 dark:bg-gray-700 dark:text-gray-200 text-nowrap">
                 {format(new Date(createdAt), "MMM d, yyyy")}
@@ -35,7 +35,7 @@ export const TaskItem = memo(function TaskItem({ task, onToggle, onDelete, onEdi
               <span className={`rounded-full px-3 py-1 text-sm ${priorityColors[priority]}`}>{priority}</span>
             </div>
           </div>
-          <p className={`mt-2 text-gray-600 dark:text-gray-300 ${completed ? "line-through" : ""}`}>{description}</p>
+          <p className={`mt-2 text-gray-600 dark:text-gray-300 break-all ${completed ? "line-through" : ""}`}>{description}</p>
           <div className="mt-4 flex justify-end gap-2">
             <button
               onClick={() => onEdit(task)}
